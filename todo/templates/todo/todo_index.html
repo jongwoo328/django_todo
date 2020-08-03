@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% for todo in todo_list %}
+        <p>{{ todo.content }} <a href="{% url 'todo:delete' todo.pk %}">삭제</a></p>
+    {% empty %}
+        <p>아직 할 일이 없습니다.</p>
+    {% endfor %}
+
+{% endblock %}

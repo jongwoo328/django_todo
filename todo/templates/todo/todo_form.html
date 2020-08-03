@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <form action="{% url 'todo:create' %}" method="POST">
+        <label for="todo">Todo</label>
+        <input name="content" type="text">
+        <input type="submit" value="작성">
+        {% csrf_token %}
+    </form>
+
+{% endblock %}
